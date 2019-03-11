@@ -5,17 +5,18 @@ from matrix import *
 def add_circle( points, cx, cy, cz, r, step ):    
     i = 0
     while i + step < 1:
-        add_edge(points,cx+r*math.cos(2*math.pi*i),
-                 \cy+r*math.sin(2*math.pi*i),
-                 \cz,
-                 \cx+r*math.cos(2*math.pi*(i+step))
-                 \cy+r*math.sin(2*math.pi*(i+step)),
-                 \cz)
+        add_edge(points,cx+r*math.cos(2*math.pi*i),\
+                 cy+r*math.sin(2*math.pi*i),\
+                 cz,\
+                 cx+r*math.cos(2*math.pi*(i+step)),\
+                 cy+r*math.sin(2*math.pi*(i+step)),\
+                 cz)
         i += step
     pass
 
 def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
-    if curve_type == :
+    if curve_type == "bezier":
+        pass
     pass
 
 
