@@ -15,8 +15,14 @@ def add_circle( points, cx, cy, cz, r, step ):
     pass
 
 def add_curve( points, x0, y0, x1, y1, x2, y2, x3, y3, step, curve_type ):
-    if curve_type == "bezier":
-        pass
+    t = 0
+    while t < 1:
+        x = generate_curve_coefs(x0,x1,x2,x3,curve_type)
+        y = generate_curve_coefs(y0,y1,y2,y3,curve_type)
+        add_point(points,\
+                  x[0][0]*(t**3)+x[0][1]*(t**2)+x[0][2]*t+x[0][3],\
+                  y[0][0]*(t**3)+y[0][1]*(t**2)+y[0][2]*t+y[0][3])
+        t+= step
     pass
 
 

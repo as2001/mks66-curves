@@ -38,7 +38,14 @@ def make_hermite():
     return matrix
 
 def generate_curve_coefs( p0, p1, p2, p3, t ):
-    pass
+    inp = new_matrix(4,1)
+    inp[0] = [p0,p1,p2,p3]
+    if t == "hermite":
+        matrix = make_hermite()
+    else:
+        matrix = make_bezier()
+    matrix_mult(matrix,inp)
+    return inp
 
 
 def make_translate( x, y, z ):
